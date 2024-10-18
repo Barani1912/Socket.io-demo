@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const http = require("http")
-//if we used with out http--> Error: You are trying to attach socket.io to an express request handler function. Please pass a http.Server instance.
+//if we used with out http--> Error: You are trying to attach socket.io to an express request handler function. Please pass a http.Server instance
 const { Server } = require("socket.io");
 const cors = require("cors");
 
@@ -14,7 +14,8 @@ const io = new Server(server, {
     origin: "http://localhost:3000",
     methods: ["GET", "POST"]
   }
-});
+})
+
 
 io.on("connection", (socket) => {
 
